@@ -4,6 +4,4 @@
   <%= form.text_field :body, placeholder: 'shout here!', required: true %>
 <% end %>
 
-<% @shouts.each do |shout| %>
-  <div><%= shout.body %></div>
-<% end %>
+<%= render @shouts %>
