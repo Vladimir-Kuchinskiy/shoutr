@@ -4,7 +4,12 @@ Rails.application.routes.draw do
   end
   root to: 'homes#show'
 
-  resources :shouts, only: %w[create show]
+  resources :shouts, only: %w[create show] do
+    member do
+      post 'like', to: 'likes#create'
+      delete 'unlike', to: 'likes#destroy'
+    end
+  end
   resources :passwords, controller: "clearance/passwords", only: %w[create new]
   resource :session, only: :create
 
