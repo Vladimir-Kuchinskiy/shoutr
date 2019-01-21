@@ -19,6 +19,10 @@ class User < ApplicationRecord
 
   validates :username, presence: true, uniqueness: true
 
+  def timeline_shouts
+    Shout.where(user_id: followed_user_ids + [id])
+  end
+
   def follow(user)
     followed_users << user
   end
