@@ -14,9 +14,11 @@ gem 'jbuilder', '~> 2.5'
 gem 'clearance'
 gem 'paperclip'
 gem 'bootsnap', '>= 1.1.0', require: false
+gem 'sunspot_rails'
 
 group :development, :test do
-  gem 'byebug'
+  gem 'byebug', platform: :mri
+  gem 'sunspot_solr'
 end
 
 group :development do

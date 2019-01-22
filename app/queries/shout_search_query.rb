@@ -4,8 +4,7 @@ class ShoutSearchQuery
   end
 
   def to_relation
-    Shout.joins("LEFT JOIN text_shouts ON content_type = 'TextShout' AND content_id = text_shouts.id")
-         .where('text_shouts.body LIKE ?', "%#{term}")
+    Shout.where(id: Shout.search { fulltext(term) }.hits.map(&:primary_key))
   end
 
   private

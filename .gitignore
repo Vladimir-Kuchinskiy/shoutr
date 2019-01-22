@@ -24,6 +24,7 @@
 .byebug_history
 /.idea/
 public/system/
+solr/
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
