@@ -13,6 +13,9 @@ Rails.application.routes.draw do
       delete 'unlike', to: 'likes#destroy'
     end
   end
+
+  resources :hashtags, only: :show
+
   resources :passwords, controller: "clearance/passwords", only: %w[create new]
   resource :session, only: :create
 
